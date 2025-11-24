@@ -3,7 +3,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,9 +12,9 @@ export default defineConfig({
   // https://<username>.github.io/<repo>/), change `base` to `'/<repo>/'`.
   site: 'https://marisanabria.github.io',
   base: '/',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), tailwind()],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  // vite: {
+  //   plugins: [tailwindcss()],
+  // },
 });
